@@ -54,7 +54,7 @@ public class RabbitMQConfig {
             CancelCallback cancelCallback = consumerTag -> {
                 System.out.println("[Canceled]" + consumerTag);
             };
-
+            channel.close();
             // basicConsume - ( queue, autoAck, deliverCallback, cancelCallback)
             //channel.basicConsume("QUEUE_NAME", true, deliverCallback, cancelCallback);
         }catch (Exception e){
